@@ -5,9 +5,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-06-28
+### Added
+- Support for simple anchor/alias use cases.
+
+- Simple driver "to_json.x" that takes a YAML file name argument on the
+  command line, parses the file, and dumps JSON formet to OUTPUT_UNIT.
+  E.g., 
+  ```./to_json.x test.yaml >  test.json```
+
+### Fixed
+- Improved formatting of JSON output.
+
+
+## [0.3.5] - 2020-06-05
+
+### Fixed
+- Mistake in push for 0.3.4 including logic for uncommitted files.
+
+## [0.3.4] - 2020-06-05
+
+### Fixed
+- Quoted strings that contained non-string values (e.g., "2004") were
+  being intrepreted as non-strings.
+  
+### Added
+- Additional examples in Examples/JSON folder.
+
+### Added
+- Support for simple anchor/alias use cases.
+  No merges, just vanilly copy-in-place.
+
+- Simple driver "to_json.x" that takes a YAML file name argument on the
+  command line, parses the file, and dumps JSON formet to OUTPUT_UNIT.
+  E.g., 
+  ```./to_json.x test.yaml >  test.json```
+
+### Fixed
+- Improved formatting of JSON output.
+	
 ## [0.3.3] - 2020-05-16
 
-## Fixed
+### Fixed
 - adapting to recent minor interface change in gFTL-shared
   Derived type "Pair" is now given a less generic name.
 
