@@ -28,17 +28,18 @@ find_package(GFTL_SHARED ${GFTL_SHARED_IS_REQUIRED_ARG} CONFIG)
 
 add_subdirectory (src)
 
-enable_testing()
-
-if (NOT TARGET (tests))
-  add_custom_target(tests
-    COMMAND ${CMAKE_CTEST_COMMAND}
-    EXCLUDE_FROM_ALL)
-endif ()
-if (NOT TARGET (build-tests))
-  add_custom_target(build-tests)
-  add_dependencies(tests build-tests)
-endif ()
+# Turn off tests for GCHP
+#enable_testing()
+#
+#if (NOT TARGET (tests))
+#  add_custom_target(tests
+#    COMMAND ${CMAKE_CTEST_COMMAND}
+#    EXCLUDE_FROM_ALL)
+#endif ()
+#if (NOT TARGET (build-tests))
+#  add_custom_target(build-tests)
+#  add_dependencies(tests build-tests)
+#endif ()
 
 if (PFUNIT_FOUND)
   set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GFTL_SOURCE_DIR}/cmake_utils")
