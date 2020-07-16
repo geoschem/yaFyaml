@@ -20,15 +20,16 @@ endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-###find_package (GFTL REQUIRED)
-###find_package (GFTL_SHARED REQUIRED VERSION 1.0.4)
-###find_package (PFUNIT 4.1 QUIET)
+# GCHP: use IS_REQUIRED_ARG set higher up in the project; comment out PFUNIT
+#find_package (GFTL REQUIRED)
+#find_package (GFTL_SHARED REQUIRED VERSION 1.0.4)
+#find_package (PFUNIT 4.1 QUIET)
 find_package(GFTL ${GFTL_IS_REQUIRED_ARG} CONFIG)
 find_package(GFTL_SHARED ${GFTL_SHARED_IS_REQUIRED_ARG} CONFIG)
 
 add_subdirectory (src)
 
-# Turn off tests for GCHP
+# GCHP: do not enable testing
 #enable_testing()
 #
 #if (NOT TARGET (tests))
